@@ -33,6 +33,11 @@ def get_all_urls(soup) -> None:
 
 
 def main(page_count: int = 5) -> list:
+    """
+    function for getting urls
+    :param page_count: default 5
+    :return: list of urls for getting questions and answers
+    """
     loop = asyncio.get_event_loop()
     soups = loop.run_until_complete(get_soup(page_count))
     threads = [Thread(target=get_all_urls, args=(soup,)) for soup in soups]
