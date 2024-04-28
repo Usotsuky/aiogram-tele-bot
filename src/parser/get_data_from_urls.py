@@ -1,7 +1,8 @@
 import asyncio
 import time
+import csv
 import datetime
-from concurrency_get_urls import main
+from src.parser.concurrency_get_urls import main
 from bs4 import BeautifulSoup
 from aiohttp import ClientSession
 
@@ -35,7 +36,11 @@ for soup in soups:
 
 
 
+def get_anwer_question():
+    return answers, questions
 
-
-
+# with open('../../answers.csv', 'w', newline='') as csvfile:
+#     writer = csv.writer(csvfile)
+#     writer.writerow("answer")
+#     writer.writerows(answers)
 
